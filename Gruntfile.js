@@ -69,11 +69,22 @@ module.exports = function(grunt) {
 					livereload: true,
 				},
 			}
-		}
+		},
+
+		'gh-pages': {
+			release: {
+			  options: {
+				message: 'automatic commit',
+				repo: 'git@github.com:theodorejb/Ladda.git',
+			  },
+			  src: ['**/*', '!node_modules/**']
+			}
+		  },
 
 	});
 
 	// Dependencies
+	grunt.loadNpmTasks( 'grunt-gh-pages' );
 	grunt.loadNpmTasks( 'grunt-contrib-jshint' );
 	grunt.loadNpmTasks( 'grunt-contrib-watch' );
 	grunt.loadNpmTasks( 'grunt-sass' );
