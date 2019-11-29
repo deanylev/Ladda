@@ -70,7 +70,6 @@ export function create( button ) {
 				spinner = createSpinner( button );
 			}
 
-			button.disabled = true;
 			button.setAttribute( 'data-loading', '' );
 
 			clearTimeout( timer );
@@ -100,8 +99,7 @@ export function create( button ) {
 		stop: function() {
 
 			if (instance.isLoading()) {
-				button.disabled = false;
-				button.removeAttribute( 'data-loading' );	
+				button.removeAttribute( 'data-loading' );
 			}
 
 			// Kill the animation after a delay to make sure it
@@ -162,7 +160,6 @@ export function create( button ) {
 
 			clearTimeout( timer );
 
-			button.disabled = false;
 			button.removeAttribute( 'data-loading' );
 
 			if( spinner ) {
